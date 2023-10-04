@@ -41,6 +41,5 @@ play_img.place(x=660, y=100)
 
 
 
-5
 root.mainloop()
 
