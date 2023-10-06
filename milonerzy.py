@@ -27,19 +27,28 @@ for row in cur.fetchall():
 
 root = tkk.Tk()
 root.geometry('1920x1080')
-root.resizable(False, False)
 root.configure(bg="black")
 
+# wejscie do gry
 
+bg = tkk.PhotoImage(file = "milionerzy1.png")
 
-Image = tkk.PhotoImage(file = "milionerzy.png")
-play_img = tkk.Label(width=600, image=Image)
-play_btn = tkk.Button(root, width=20, height=10, text="Zagraj", font="Arial", fg="White", bg="black")
-play_btn.place(x=860, y=800)
-play_img.place(x=660, y=100)
+play_img = tkk.Label(image=bg)
+play_img.place(x=0, y=0)
 
+ # przycisk Zagraj 
 
+play = tkk.PhotoImage(file="guzik-zagraj.png")
 
+button = tkk.Button(root, image=play)
+button.place(x=700, y=700)
+
+# przycisk Info
+
+info = tkk.PhotoImage(file="guzik-informacje.png")
+
+button = tkk.Button(root, image=info)
+button.place(x=1685, y=770)
 
 root.mainloop()
 
