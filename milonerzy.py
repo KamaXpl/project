@@ -40,15 +40,41 @@ play_img.place(x=0, y=0)
 
 play = tkk.PhotoImage(file="guzik-zagraj.png")
 
-button = tkk.Button(root, image=play)
-button.place(x=700, y=700)
+play_btn = tkk.Button(root, image=play)
+play_btn.place(x=700, y=700)
 
 # przycisk Info
 
+def zasady():
+    zas = Label(text=" ZASADY", width = 8, height= 2, font=('Times New Roman', 20, 'bold')).place(x= 310,y= 120)
+    zasady_gry = Label(text = "\nGra milionerzy polega na tym, aby \n odpowiedzieć poprawnie na 12 pytań, za\n każde pytanie jest dane suma pieniędzy. \n W grze są 2 progi gwarantowane \n 1000 pln i 40000 pln.\nW każdej rundzie uczestnik \n dostanie pytanie oraz cztery \n odpowiedzi, spośród których musi \n wybrać jedną właściwą. Każdy \n zawodnik ma prawo do wykorzystania \n trzech kół ratunkowych \n w dowolnym czasie gry.\n",
+                        width=35,height=15, font=('Times New Roman', 20, 'bold')).place(x= 100,y= 270)
+    kolorat1 = Label(text ="koło ratunkowe, które eliminuje dwie błędne odpowiedzi", width=50,height=3, font=('Times New Roman', 20, 'bold')).place(x= 1000,y= 150)
+    kolorat2 = Label(text ="koło ratunkowe, które elimunuje jedną złą odpowiedź", width=50,height=3, font=('Times New Roman', 20, 'bold')).place(x= 1000,y= 500)
+    kolorat3 = Label(text ="koło ratunkowe, które wskazuje poprawną odpowiedź", width=50, height=3, font=('Times New Roman', 20, 'bold')).place(x= 1000,y= 850)
+
+    kolo1 = tkk.PhotoImage(file = "guzik-50na50.png")
+
+    kl1 = tkk.Label(image=kolo1)
+    kl1.place(x=700, y=100)
+
+    kolo2 = tkk.PhotoImage(file = "guzik-eliminacja1zlejodp.png")
+
+    kl2 = tkk.Label(image=kolo2)
+    kl2.place(x=700, y=450)
+
+    kolo3 = tkk.PhotoImage(file = "guzik-teldoprzyj.png")
+
+    kl3 = tkk.Label(image=kolo3)
+    kl3.place(x=700, y=800)
+
+
 info = tkk.PhotoImage(file="guzik-informacje.png")
 
-button = tkk.Button(root, image=info)
-button.place(x=1685, y=770)
+info_btn = tkk.Button(root, image=info, command=zasady)
+info_btn.place(x=1685, y=770)
 
+
+                       
 root.mainloop()
 
