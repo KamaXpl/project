@@ -58,16 +58,16 @@ def informacje():
     kolorat2 = Label(extra_window, text ="koło ratunkowe, które elimunuje jedną złą odpowiedź", bg="#2c397f", highlightthickness=10, width=50,height=3, font=('Times New Roman', 20, 'bold')).place(x= 1000,y= 570)
     kolorat3 = Label(extra_window, text ="koło ratunkowe, które wskazuje poprawną odpowiedź", bg="#2c397f", highlightthickness=10, width=50, height=3, font=('Times New Roman', 20, 'bold')).place(x= 1000,y= 850)
 
-    image1= tkk.PhotoImage(file = "guzik-50na50.png")
-    kl1 = tkk.Label(extra_window, image=image1)
+    image1= tkk.PhotoImage(file = "guzik-50na502.png")
+    kl1 = tkk.Label(extra_window, image=image1, highlightthickness=0)
     kl1.place(x=700, y=250)
 
-    image2 = tkk.PhotoImage(file = "guzik-eliminacja1zlejodp.png")
-    kl2 = tkk.Label(extra_window,image=image2)
+    image2 = tkk.PhotoImage(file = "guzik-eliminacja1zlejodp2.png")
+    kl2 = tkk.Label(extra_window,image=image2, highlightthickness=0)
     kl2.place(x=700, y=525)
 
-    image3 = tkk.PhotoImage(file = "guzik-teldoprzyj.png")
-    kl3 = tkk.Label(extra_window, image=image3)
+    image3 = tkk.PhotoImage(file = "guzik-teldoprzyj2.png")
+    kl3 = tkk.Label(extra_window, image=image3, highlightthickness=0)
     kl3.place(x=700, y=800)
 
     extra_window.mainloop()
