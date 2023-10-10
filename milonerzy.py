@@ -2,6 +2,7 @@ import random
 import tkinter as tkk
 from tkinter import *
 import mysql.connector
+from tkinter import messagebox
 
 
 import MySQLdb
@@ -12,15 +13,9 @@ milionerzy = MySQLdb.connect(host="localhost",    # your host, usually localhost
                      db="milionerzy")        # name of the data base
 
 
-cur = milionerzy.cursor()
-zestawy = [
-cur.execute("SELECT Pytania FROM pyt WHERE id BETWEEN 1 AND 12"), 
-cur.execute("SELECT Pytania FROM pyt WHERE id BETWEEN 13 AND 24"),
-cur.execute("SELECT Pytania FROM pyt WHERE id BETWEEN 25 AND 36"),
-cur.execute("SELECT Pytania FROM pyt WHERE id BETWEEN 37 AND 48")]
 
-zes_wyb = random.choices(zestawy)
-print(milionerzy)
+cur = milionerzy.cursor()
+
 
 root = tkk.Tk()
 root.geometry('1920x1080')
@@ -74,12 +69,73 @@ info_btn.place(x=1685, y=770)
 def gra():
     play_window = tkk.Toplevel()
     play_window.geometry('1920x1080')
+
     bg4 = tkk.PhotoImage(file = "milionerzy2.png")
     bg5 = tkk.Label(play_window, image=bg4)
     bg5.place(x=0, y=0)
+
     tab1 = tkk.PhotoImage(file = "tablica.png")
     tab_1 = tkk.Label(play_window, image=tab1)
     tab_1.place(x=1300,y=-40)
+
+ # Koła ratunkowe
+    def p_na_p(): #pol na poł
+        print("1")
+    def eliminacja(): #eliminacja1zlejodp
+        print("2")
+    def tel():  #tel do przyjaciela
+        print("3")
+        
+    kolo1= tkk.PhotoImage(file = "guzik-50na50.png")
+    kolo_1 = tkk.Button(play_window, image=kolo1, command=p_na_p)
+    kolo_1.place(x=150, y=50)
+
+    kolo2 = tkk.PhotoImage(file = "guzik-eliminacja1zlejodp.png")
+    kolo_2 = tkk.Button(play_window,image=kolo2, command=eliminacja)
+    kolo_2.place(x=550, y=50)
+
+    kolo3 = tkk.PhotoImage(file = "guzik-teldoprzyj.png")
+    kolo_3 = tkk.Button(play_window, image=kolo3, command=tel)
+    kolo_3.place(x=950, y=50)
+
+    Pytanie = cur.execute("SELECT Pytania From pyt LIMIT 1")
+    A = cur.execute("SELECT A FROM odp LIMIT 1")
+    B = cur.execute("SELECT B FROM odp LIMIT 1")
+    C = cur.execute("SELECT C FROM odp LIMIT 1")
+    D = cur.execute("SELECT D FROM odp LIMIT 1")
+    Poprawna_odp = cur.execute("SELECT Poprawna_odp FROM odp LIMIT 1")
+    
+    Pytanie1 = Label(play_window, text=Pytanie).place(x=300, y=350, width=700, height=200)
+    A1 = Button(play_window, text=A).place(x=50, y=600, width=600, height=200)
+    B2 = Button(play_window, text=B).place(x=650, y=600, width=600, height=200)
+    C3 = Button(play_window, text=C).place(x=50, y=800, width=600, height=200)
+    D4 = Button(play_window, text=D).place(x=650, y=800, width=600, height=200)
+
+    class pt1: 
+        def pt():
+            if A == Poprawna_Odp:
+                messagebox.showinfo("Milionerzy", "Poprawna odpowiedz!")
+            else:
+                messagebox.askquestion("Milionerzy", "Błedna odpowiedz! Czy chcesz zagrac ponownie?")
+
+            if B == Poprawna_Odp:
+                messagebox.showinfo("Milionerzy", "Poprawna odpowiedz!")
+            else:
+                messagebox.askquestion("Milionerzy", "Błedna odpowiedz! Czy chcesz zagrac ponownie?")
+
+            if C == Poprawna_Odp:
+                messagebox.showinfo("Milionerzy", "Poprawna odpowiedz!")
+            else:
+                messagebox.askquestion("Milionerzy", "Błedna odpowiedz! Czy chcesz zagrac ponownie?")
+     
+            if D == Poprawna_Odp:
+
+                messagebox.showinfo("Milionerzy", "Poprawna odpowiedz!")
+            else:
+                messagebox.askquestion("Milionerzy", "Błedna odpowiedz! Czy chcesz zagrac ponownie?")
+
+
+    
 
     play_window.mainloop()
 
