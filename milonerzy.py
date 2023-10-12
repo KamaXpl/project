@@ -98,18 +98,39 @@ def gra():
     kolo_3 = tkk.Button(play_window, image=kolo3, command=tel)
     kolo_3.place(x=950, y=50)
 
-    Pytanie = cur.execute("SELECT Pytania From pyt LIMIT 1")
-    A = cur.execute("SELECT A FROM odp LIMIT 1")
-    B = cur.execute("SELECT B FROM odp LIMIT 1")
-    C = cur.execute("SELECT C FROM odp LIMIT 1")
-    D = cur.execute("SELECT D FROM odp LIMIT 1")
-    Poprawna_odp = cur.execute("SELECT Poprawna_odp FROM odp LIMIT 1")
+
+    for i in range(12):
+        cur.execute("Select * from pyt inner join odp on id=id1;")
+        pytanie = cur.fetchall()
+        pytanie = random.sample(pytanie, 12)
     
-    Pytanie1 = Label(play_window, text=Pytanie).place(x=300, y=350, width=700, height=200)
-    A1 = Button(play_window, text=A).place(x=50, y=600, width=600, height=200)
-    B2 = Button(play_window, text=B).place(x=650, y=600, width=600, height=200)
-    C3 = Button(play_window, text=C).place(x=50, y=800, width=600, height=200)
-    D4 = Button(play_window, text=D).place(x=650, y=800, width=600, height=200)
+
+        cur.execute("Select A from odp inner join pyt on id1=id;")
+        odp_a = cur.fetchall()
+        odp_a = random.sample(odp_a, 12)
+    
+
+        cur.execute("Select B from odp inner join pyt on id1=id;")
+        odp_b = cur.fetchall()
+        odp_b = random.sample(odp_b, 12)
+    
+
+        cur.execute("Select C from odp inner join pyt on id1=id;")
+        odp_c = cur.fetchall()
+        odp_c = random.sample(odp_c, 12)
+     
+
+        cur.execute("Select D from odp inner join pyt on id1=id;")
+        odp_d = cur.fetchall()
+        odp_d = random.sample(odp_d, 12)
+    
+
+        
+        Pytanie1 = Label(play_window, text=pytanie).place(x=300, y=350, width=700, height=200)
+        A1 = Button(play_window, text=odp_a).place(x=50, y=600, width=600, height=200)
+        B2 = Button(play_window, text=odp_b).place(x=650, y=600, width=600, height=200)
+        C3 = Button(play_window, text=odp_c).place(x=50, y=800, width=600, height=200)
+        D4 = Button(play_window, text=odp_d).place(x=650, y=800, width=600, height=200)
 
     class pt1: 
         def pt():
