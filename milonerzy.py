@@ -100,45 +100,41 @@ def gra():
 
 
     for i in range(12):
-        cur.execute("Select * from pyt inner join odp on id=id1;")
-        pytanie = cur.fetchall()
-        pytanie = random.sample(pytanie, 12)
+        def pyta():
+           cur.execute("Select * from pyt inner join odp on id=id1;")
+           pytanie = cur.fetchall()
+           pytanie = random.sample(pytanie, 12)
     
-
-        cur.execute("Select A from odp inner join pyt on id1=id;")
-        odp_a = cur.fetchall()
-        odp_a = random.sample(odp_a, 12)
+        def odpA():
+           cur.execute("Select A from odp inner join pyt on id1=id;")
+           odp_a = cur.fetchall()
+           odp_a = random.sample(odp_a, 12)
     
-
-        cur.execute("Select B from odp inner join pyt on id1=id;")
-        odp_b = cur.fetchall()
-        odp_b = random.sample(odp_b, 12)
+        def odpB():
+           cur.execute("Select B from odp inner join pyt on id1=id;")
+           odp_b = cur.fetchall()
+           odp_b = random.sample(odp_b, 12)
     
-
-        cur.execute("Select C from odp inner join pyt on id1=id;")
-        odp_c = cur.fetchall()
-        odp_c = random.sample(odp_c, 12)
+        def odpC():
+            cur.execute("Select C from odp inner join pyt on id1=id;")
+            odp_c = cur.fetchall()
+            odp_c = random.sample(odp_c, 12)
      
-
-        cur.execute("Select D from odp inner join pyt on id1=id;")
-        odp_d = cur.fetchall()
-        odp_d = random.sample(odp_d, 12)
+        def odpD():
+            cur.execute("Select D from odp inner join pyt on id1=id;")
+            odp_d = cur.fetchall()
+            odp_d = random.sample(odp_d, 12)
     
+          Pytanie1 = Label(play_window, text=pyta).place(x=300, y=350, width=700, height=200)
+          A1 = Button(play_window, text=odpA).place(x=50, y=600, width=600, height=200)
+          B2 = Button(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+          C3 = Button(play_window, text=odpC).place(x=50, y=800, width=600, height=200)
+          D4 = Button(play_window, text=odpD).place(x=650, y=800, width=600, height=200)
 
-        
-        Pytanie1 = Label(play_window, text=pytanie).place(x=300, y=350, width=700, height=200)
-        A1 = Button(play_window, text=odp_a).place(x=50, y=600, width=600, height=200)
-        B2 = Button(play_window, text=odp_b).place(x=650, y=600, width=600, height=200)
-        C3 = Button(play_window, text=odp_c).place(x=50, y=800, width=600, height=200)
-        D4 = Button(play_window, text=odp_d).place(x=650, y=800, width=600, height=200)
-
-    class pt1: 
-        def pt():
             if A == Poprawna_Odp:
-                messagebox.showinfo("Milionerzy", "Poprawna odpowiedz!")
+              messagebox.showinfo("Milionerzy", "Poprawna odpowiedz!")
             else:
                 messagebox.askquestion("Milionerzy", "Błedna odpowiedz! Czy chcesz zagrac ponownie?")
-
             if B == Poprawna_Odp:
                 messagebox.showinfo("Milionerzy", "Poprawna odpowiedz!")
             else:
