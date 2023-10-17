@@ -77,15 +77,30 @@ def gra():
     tab1 = tkk.PhotoImage(file = "tablica.png")
     tab_1 = tkk.Label(play_window, image=tab1)
     tab_1.place(x=1300,y=-40)
-
+  
  # Koła ratunkowe
     def p_na_p(): #pol na poł
-        print("1")
+        for n in range(2)
+        random.sample(
     def eliminacja(): #eliminacja1zlejodp
         print("2")
     def tel():  #tel do przyjaciela
-        print("3")
-        
+        if A == Poprawna_Odp:
+          B2 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+          C3 = Label(play_window, text=odpC).place(x=50, y=800, width=600, height=200)
+          D4 = Label(play_window, text=odpD).place(x=650, y=800, width=600, height=200)
+        if B == Poprawna_Odp:
+          B2 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+          C3 = Label(play_window, text=odpC).place(x=50, y=800, width=600, height=200)
+          D4 = Label(play_window, text=odpD).place(x=650, y=800, width=600, height=200)
+        if A == Poprawna_Odp:
+          B2 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+          C3 = Label(play_window, text=odpC).place(x=50, y=800, width=600, height=200)
+          D4 = Label(play_window, text=odpD).place(x=650, y=800, width=600, height=200)
+        if A == Poprawna_Odp:
+          B2 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+          C3 = Label(play_window, text=odpC).place(x=50, y=800, width=600, height=200)
+          D4 = Label(play_window, text=odpD).place(x=650, y=800, width=600, height=200)
     kolo1= tkk.PhotoImage(file = "guzik-50na50.png")
     kolo_1 = tkk.Button(play_window, image=kolo1, command=p_na_p)
     kolo_1.place(x=150, y=50)
