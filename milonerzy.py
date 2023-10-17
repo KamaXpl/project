@@ -80,27 +80,44 @@ def gra():
   
  # Koła ratunkowe
     def p_na_p(): #pol na poł
-        for n in range(2)
-        random.sample(
+      if A == Poprawna_Odp:
+          B1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+          C1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+        if B == Poprawna_Odp:
+          C1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+          D1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+        if C == Poprawna_Odp:
+          D1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+          A1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+        if D == Poprawna_Odp:
+          A1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+          B1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
     def eliminacja(): #eliminacja1zlejodp
-        print("2")
+        if A == Poprawna_Odp:
+          B1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+        if B == Poprawna_Odp:
+          C1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+        if C == Poprawna_Odp:
+          D1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+        if D == Poprawna_Odp:
+          A1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
     def tel():  #tel do przyjaciela
         if A == Poprawna_Odp:
-          B2 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
-          C3 = Label(play_window, text=odpC).place(x=50, y=800, width=600, height=200)
-          D4 = Label(play_window, text=odpD).place(x=650, y=800, width=600, height=200)
+          B1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+          C1 = Label(play_window, text=odpC).place(x=50, y=800, width=600, height=200)
+          D1 = Label(play_window, text=odpD).place(x=650, y=800, width=600, height=200)
         if B == Poprawna_Odp:
-          B2 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
-          C3 = Label(play_window, text=odpC).place(x=50, y=800, width=600, height=200)
-          D4 = Label(play_window, text=odpD).place(x=650, y=800, width=600, height=200)
-        if A == Poprawna_Odp:
-          B2 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
-          C3 = Label(play_window, text=odpC).place(x=50, y=800, width=600, height=200)
-          D4 = Label(play_window, text=odpD).place(x=650, y=800, width=600, height=200)
-        if A == Poprawna_Odp:
-          B2 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
-          C3 = Label(play_window, text=odpC).place(x=50, y=800, width=600, height=200)
-          D4 = Label(play_window, text=odpD).place(x=650, y=800, width=600, height=200)
+          A1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+          C1 = Label(play_window, text=odpC).place(x=50, y=800, width=600, height=200)
+          D1 = Label(play_window, text=odpD).place(x=650, y=800, width=600, height=200)
+        if C == Poprawna_Odp:
+          B1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+          A1 = Label(play_window, text=odpC).place(x=50, y=800, width=600, height=200)
+          D1 = Label(play_window, text=odpD).place(x=650, y=800, width=600, height=200)
+        if D == Poprawna_Odp:
+          B1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+          C1 = Label(play_window, text=odpC).place(x=50, y=800, width=600, height=200)
+          D1 = Label(play_window, text=odpD).place(x=650, y=800, width=600, height=200)
     kolo1= tkk.PhotoImage(file = "guzik-50na50.png")
     kolo_1 = tkk.Button(play_window, image=kolo1, command=p_na_p)
     kolo_1.place(x=150, y=50)
