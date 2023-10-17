@@ -79,56 +79,7 @@ def gra():
     tab_1.place(x=1300,y=-40)
   
  # Koła ratunkowe
-    def p_na_p(): #pol na poł
-      if A == Poprawna_Odp:
-          B1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
-          C1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
-        if B == Poprawna_Odp:
-          C1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
-          D1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
-        if C == Poprawna_Odp:
-          D1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
-          A1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
-        if D == Poprawna_Odp:
-          A1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
-          B1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
-    def eliminacja(): #eliminacja1zlejodp
-        if A == Poprawna_Odp:
-          B1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
-        if B == Poprawna_Odp:
-          C1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
-        if C == Poprawna_Odp:
-          D1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
-        if D == Poprawna_Odp:
-          A1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
-    def tel():  #tel do przyjaciela
-        if A == Poprawna_Odp:
-          B1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
-          C1 = Label(play_window, text=odpC).place(x=50, y=800, width=600, height=200)
-          D1 = Label(play_window, text=odpD).place(x=650, y=800, width=600, height=200)
-        if B == Poprawna_Odp:
-          A1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
-          C1 = Label(play_window, text=odpC).place(x=50, y=800, width=600, height=200)
-          D1 = Label(play_window, text=odpD).place(x=650, y=800, width=600, height=200)
-        if C == Poprawna_Odp:
-          B1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
-          A1 = Label(play_window, text=odpC).place(x=50, y=800, width=600, height=200)
-          D1 = Label(play_window, text=odpD).place(x=650, y=800, width=600, height=200)
-        if D == Poprawna_Odp:
-          B1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
-          C1 = Label(play_window, text=odpC).place(x=50, y=800, width=600, height=200)
-          D1 = Label(play_window, text=odpD).place(x=650, y=800, width=600, height=200)
-    kolo1= tkk.PhotoImage(file = "guzik-50na50.png")
-    kolo_1 = tkk.Button(play_window, image=kolo1, command=p_na_p)
-    kolo_1.place(x=150, y=50)
-
-    kolo2 = tkk.PhotoImage(file = "guzik-eliminacja1zlejodp.png")
-    kolo_2 = tkk.Button(play_window,image=kolo2, command=eliminacja)
-    kolo_2.place(x=550, y=50)
-
-    kolo3 = tkk.PhotoImage(file = "guzik-teldoprzyj.png")
-    kolo_3 = tkk.Button(play_window, image=kolo3, command=tel)
-    kolo_3.place(x=950, y=50)
+    
 
 
     for i in range(12):
@@ -139,54 +90,109 @@ def gra():
     
         def odpA():
            cur.execute("Select A from odp inner join pyt on id1=id;")
-           odp_a = cur.fetchall()
-           odp_a = random.sample(odp_a, 12)
+           A = cur.fetchall()
+           A = random.sample(A, 12)
     
         def odpB():
            cur.execute("Select B from odp inner join pyt on id1=id;")
-           odp_b = cur.fetchall()
-           odp_b = random.sample(odp_b, 12)
+           B = cur.fetchall()
+           B = random.sample(B, 12)
     
         def odpC():
             cur.execute("Select C from odp inner join pyt on id1=id;")
-            odp_c = cur.fetchall()
-            odp_c = random.sample(odp_c, 12)
+            C = cur.fetchall()
+            C = random.sample(C, 12)
      
         def odpD():
             cur.execute("Select D from odp inner join pyt on id1=id;")
-            odp_d = cur.fetchall()
-            odp_d = random.sample(odp_d, 12)
+            D = cur.fetchall()
+            D = random.sample(D, 12)
+
+
+        def odp_pop():
+            cur.execute("Select Poprawna_odp from odp inner join pyt on id1=id;")
+            popr = cur.fetchall()
+            popr = random.sample(popr, 12)
+
+
+
+        Pytanie1 = Label(play_window, text=pyta).place(x=300, y=350, width=700, height=200)
+        A1 = Button(play_window, text=odpA).place(x=50, y=600, width=600, height=200)
+        B2 = Button(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+        C3 = Button(play_window, text=odpC).place(x=50, y=800, width=600, height=200)
+        D4 = Button(play_window, text=odpD).place(x=650, y=800, width=600, height=200)
+        
+
+
+
+        
+
+
+
+
+
+        def p_na_p(): #pol na poł
+          if odpA == odp_pop:
+            B1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+            C1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+          if odpB == odp_pop:
+            C1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+            D1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+          if odpC == odp_pop:
+            D1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+            A1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+          if odpD == odp_pop:
+            A1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+            B1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+
+        def eliminacja(): #eliminacja1zlejodp
+          if odpA == odp_pop:
+            B1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+          if odpB == odp_pop:
+            C1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+          if odpC == odp_pop:
+            D1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+          if odpD == odp_pop:
+            A1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+
+        def tel():  #tel do przyjaciela
+          if odpA == odp_pop:
+            B1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+            C1 = Label(play_window, text=odpC).place(x=50, y=800, width=600, height=200)
+            D1 = Label(play_window, text=odpD).place(x=650, y=800, width=600, height=200)
+          if odpB == odp_pop:
+            A1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+            C1 = Label(play_window, text=odpC).place(x=50, y=800, width=600, height=200)
+            D1 = Label(play_window, text=odpD).place(x=650, y=800, width=600, height=200)
+          if odpC == odp_pop:
+            B1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+            A1 = Label(play_window, text=odpC).place(x=50, y=800, width=600, height=200)
+            D1 = Label(play_window, text=odpD).place(x=650, y=800, width=600, height=200)
+          if odpD == odp_pop:
+            B1 = Label(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
+            C1 = Label(play_window, text=odpC).place(x=50, y=800, width=600, height=200)
+            D1 = Label(play_window, text=odpD).place(x=650, y=800, width=600, height=200)
+
+        kolo1 = tkk.PhotoImage(file = "guzik-50na50.png")
+        kolo_1 = tkk.Button(play_window, image=kolo1, command=p_na_p)
+        kolo_1.place(x=150, y=50)
+
+        kolo2 = tkk.PhotoImage(file = "guzik-eliminacja1zlejodp.png")
+        kolo_2 = tkk.Button(play_window,image=kolo2, command=eliminacja)
+        kolo_2.place(x=550, y=50)
+
+        kolo3 = tkk.PhotoImage(file = "guzik-teldoprzyj.png")
+        kolo_3 = tkk.Button(play_window, image=kolo3, command=tel)
+        kolo_3.place(x=950, y=50)
+
+
+
+        
+        
+
     
-          Pytanie1 = Label(play_window, text=pyta).place(x=300, y=350, width=700, height=200)
-          A1 = Button(play_window, text=odpA).place(x=50, y=600, width=600, height=200)
-          B2 = Button(play_window, text=odpB).place(x=650, y=600, width=600, height=200)
-          C3 = Button(play_window, text=odpC).place(x=50, y=800, width=600, height=200)
-          D4 = Button(play_window, text=odpD).place(x=650, y=800, width=600, height=200)
 
-            if A == Poprawna_Odp:
-              messagebox.showinfo("Milionerzy", "Poprawna odpowiedz!")
-            else:
-                messagebox.askquestion("Milionerzy", "Błedna odpowiedz! Czy chcesz zagrac ponownie?")
-            if B == Poprawna_Odp:
-                messagebox.showinfo("Milionerzy", "Poprawna odpowiedz!")
-            else:
-                messagebox.askquestion("Milionerzy", "Błedna odpowiedz! Czy chcesz zagrac ponownie?")
-
-            if C == Poprawna_Odp:
-                messagebox.showinfo("Milionerzy", "Poprawna odpowiedz!")
-            else:
-                messagebox.askquestion("Milionerzy", "Błedna odpowiedz! Czy chcesz zagrac ponownie?")
-     
-            if D == Poprawna_Odp:
-
-                messagebox.showinfo("Milionerzy", "Poprawna odpowiedz!")
-            else:
-                messagebox.askquestion("Milionerzy", "Błedna odpowiedz! Czy chcesz zagrac ponownie?")
-
-
-    
-
-    play_window.mainloop()
+        play_window.mainloop()
 
 
 play = tkk.PhotoImage(file="guzik-zagraj.png")
